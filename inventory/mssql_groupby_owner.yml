@@ -1,0 +1,14 @@
+---
+
+plugin: mssql_inventory
+# query should return 'hosts' column and 'groups' column for respective assignment
+# all other columns are ignored
+# note that ansible will complain about empty or null values, so best to filter them out
+query_string: |
+  SELECT
+        computername AS "hosts"
+        ,owner AS "groups"
+    FROM SomeTable
+    WHERE 
+      DATALENGTH(owner) > 0
+      AND DATALENGTH(computername) > 0

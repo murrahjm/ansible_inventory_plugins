@@ -1,0 +1,15 @@
+---
+
+plugin: neo4j_inventory
+#connection info must be passed as environment variables:
+  #neo4j_user
+  #neo4j_password
+  #neo4j_host
+  #neo4j_bolt_port
+query:
+  group_node: OperatingSystem
+  group_label: Name
+  host_node: Server
+  host_label: Name
+  relation: '*'
+  # max_length: 2

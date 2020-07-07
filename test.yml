@@ -1,0 +1,11 @@
+---
+- hosts: all
+  vars:
+    ansible_port: 5985
+    ansible_winrm_transport: kerberos
+    ansible_winrm_read_timeout_sec: 600
+    ansible_winrm_message_encryption: always
+    ansible_connection: winrm
+  tasks:
+  - win_ping:
+
